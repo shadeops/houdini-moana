@@ -1,0 +1,15 @@
+Operator:     moana::disney_material::1.1
+Label:        Moana: Disney Material
+Path:         oplib:/moana::Vop/disney_material::1.1?moana::Vop/disney_material::1.1
+Icon:         VOP_moana-disney_material-1.0
+Table:        Vop
+License:      
+Extra:        subtype=material shadertype=vopmaterial 
+User:         
+Inputs:       0 to 21
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Wed Nov 14 22:45:58 2018
+

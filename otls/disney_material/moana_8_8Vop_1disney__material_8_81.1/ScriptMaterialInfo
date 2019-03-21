@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scriptMaterialInfo>
+    <choiceNode type="collect">
+        <choiceNode type="leaf">
+            <choiceVopType>surface</choiceVopType>
+            <choiceData>
+                <entry key="SectionName" value="SurfaceVexCode"/>
+            </choiceData>
+        </choiceNode>
+        <choiceNode type="leaf">
+            <choiceVopType>displacement</choiceVopType>
+            <choiceData>
+                <entry key="SectionName" value="DisplacementVexCode"/>
+            </choiceData>
+        </choiceNode>
+    </choiceNode>
+    <extraParameters/>
+</scriptMaterialInfo>

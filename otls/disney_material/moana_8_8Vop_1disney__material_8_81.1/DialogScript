@@ -1,0 +1,338 @@
+# Dialog script for moana::disney_material::1.1 automatically generated
+
+{
+    name	moana::disney_material::1.1
+    script	moana::disney_material::1.1
+    label	"Moana: Disney Material"
+
+    rendermask	VMantra
+    shadertype	vopmaterial
+    input	string	type	""
+    input	vector	baseColor	""
+    input	string	colorMap	""
+    input	string	displacementMap	""
+    input	float	roughness	""
+    input	float	ior	""
+    input	float	metallic	""
+    input	float	diffTrans	""
+    input	float	specTrans	""
+    input	float	specularTint	""
+    input	float	sheen	""
+    input	float	sheenTint	""
+    input	float	clearcoat	""
+    input	float	clearcoatGloss	""
+    input	float	anisotropic	""
+    input	vector	scatterDistance	""
+    input	float	flatness	""
+    input	float	refractive	""
+    input	float	alpha	""
+    input	vector	uv	""
+    input	string	mask	""
+    output	surface	surface	surface
+    output	displacement	displacement	displacement
+    inputflags	type	2
+    inputflags	baseColor	2
+    inputflags	colorMap	2
+    inputflags	displacementMap	2
+    inputflags	roughness	2
+    inputflags	ior	2
+    inputflags	metallic	2
+    inputflags	diffTrans	2
+    inputflags	specTrans	2
+    inputflags	specularTint	2
+    inputflags	sheen	2
+    inputflags	sheenTint	2
+    inputflags	clearcoat	2
+    inputflags	clearcoatGloss	2
+    inputflags	anisotropic	2
+    inputflags	scatterDistance	2
+    inputflags	flatness	2
+    inputflags	refractive	2
+    inputflags	alpha	2
+    inputflags	uv	3
+    inputflags	mask	2
+    signature	"Default Inputs"	default	{ string vector string string float float float float float float float float float float float vector float float float vector string surface displacement }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(0)
+	___begin	auto
+			(0)
+    }
+
+    help {
+	""
+    }
+
+    group {
+        name    "folder0"
+        label   "Shading"
+
+        parm {
+            name    "type"
+            label   "type"
+            type    string
+            default { "solid" }
+            menu {
+                "solid" "solid"
+                "thin"  "thin"
+            }
+            parmtag { "parmvop" "1" }
+            parmtag { "shaderparmcontexts" "surface" }
+        }
+        parm {
+            name    "baseColor"
+            label   "baseColor"
+            type    color
+            size    3
+            default { "0.5" "0.5" "0.5" }
+            range   { 0 1 }
+            parmtag { "parmvop" "1" }
+            parmtag { "shaderparmcontexts" "surface" }
+        }
+        parm {
+            name    "colorMap"
+            label   "colorMap"
+            type    string
+            default { "" }
+            parmtag { "parmvop" "1" }
+            parmtag { "shaderparmcontexts" "surface" }
+        }
+        parm {
+            name    "displacementMap"
+            label   "displacementMap"
+            type    string
+            default { "" }
+            parmtag { "parmvop" "1" }
+            parmtag { "shaderparmcontexts" "displace" }
+        }
+        parm {
+            name    "roughness"
+            label   "roughness"
+            type    float
+            default { "0.5" }
+            range   { 0 1 }
+            parmtag { "parmvop" "1" }
+            parmtag { "shaderparmcontexts" "surface" }
+        }
+        parm {
+            name    "ior"
+            label   "ior"
+            type    float
+            default { "1.5" }
+            range   { 0 1 }
+            parmtag { "parmvop" "1" }
+            parmtag { "shaderparmcontexts" "surface" }
+        }
+        parm {
+            name    "metallic"
+            label   "metallic"
+            type    float
+            default { "0" }
+            range   { 0 1 }
+            parmtag { "parmvop" "1" }
+            parmtag { "shaderparmcontexts" "surface" }
+        }
+        parm {
+            name    "diffTrans"
+            label   "diffTrans"
+            type    float
+            default { "0" }
+            range   { 0 1 }
+            parmtag { "parmvop" "1" }
+            parmtag { "shaderparmcontexts" "surface" }
+        }
+        parm {
+            name    "specTrans"
+            label   "specTrans"
+            type    float
+            default { "0" }
+            hidewhen "{ useBaseColor == 0 }"
+            range   { 0 1 }
+            parmtag { "parmvop" "1" }
+            parmtag { "shaderparmcontexts" "surface" }
+        }
+        parm {
+            name    "specularTint"
+            label   "specularTint"
+            type    float
+            default { "0" }
+            range   { 0 1 }
+            parmtag { "parmvop" "1" }
+            parmtag { "shaderparmcontexts" "surface" }
+        }
+        parm {
+            name    "sheen"
+            label   "sheen"
+            type    float
+            default { "0" }
+            range   { 0 1 }
+            parmtag { "parmvop" "1" }
+            parmtag { "shaderparmcontexts" "surface" }
+        }
+        parm {
+            name    "sheenTint"
+            label   "sheenTint"
+            type    float
+            default { "0.5" }
+            range   { 0 1 }
+            parmtag { "parmvop" "1" }
+            parmtag { "shaderparmcontexts" "surface" }
+        }
+        parm {
+            name    "clearcoat"
+            label   "clearcoat"
+            type    float
+            default { "0" }
+            hidewhen "{ useBaseColor == 0 }"
+            range   { 0 1 }
+            parmtag { "parmvop" "1" }
+            parmtag { "shaderparmcontexts" "surface" }
+        }
+        parm {
+            name    "clearcoatGloss"
+            label   "clearcoatGloss"
+            type    float
+            default { "0" }
+            range   { 0 1 }
+            parmtag { "parmvop" "1" }
+            parmtag { "shaderparmcontexts" "surface" }
+        }
+        parm {
+            name    "anisotropic"
+            label   "anisotropic"
+            type    float
+            default { "0" }
+            range   { 0 1 }
+            parmtag { "parmvop" "1" }
+            parmtag { "shaderparmcontexts" "surface" }
+        }
+        parm {
+            name    "scatterDistance"
+            label   "scatterDistance"
+            type    float
+            size    3
+            default { "0" "0" "0" }
+            hidewhen "{ useBaseColor == 0 }"
+            range   { 0 10 }
+            parmtag { "parmvop" "1" }
+            parmtag { "shaderparmcontexts" "surface" }
+        }
+        parm {
+            name    "alpha"
+            label   "alpha"
+            type    float
+            default { "1" }
+            range   { 0 1 }
+            parmtag { "parmvop" "1" }
+            parmtag { "shaderparmcontexts" "surface" }
+        }
+        group {
+            name    "Ignored"
+            label   "Ignored"
+
+            parm {
+                name    "flatness"
+                label   "flatness"
+                type    float
+                default { "0" }
+                range   { 0 1 }
+                parmtag { "parmvop" "1" }
+                parmtag { "shaderparmcontexts" "" }
+            }
+            parm {
+                name    "refractive"
+                label   "refractive"
+                type    float
+                default { "0" }
+                range   { 0 1 }
+                parmtag { "parmvop" "1" }
+                parmtag { "shaderparmcontexts" "" }
+            }
+            parm {
+                name    "mask"
+                label   "mask"
+                type    string
+                default { "" }
+                parmtag { "parmvop" "1" }
+                parmtag { "shaderparmcontexts" "" }
+            }
+        }
+
+    }
+
+    group {
+        name    "folder0_1"
+        label   "Settings"
+
+        parm {
+            name    "vm_displacebound"
+            label   "Displacement Bound"
+            type    float
+            default { "if(strlen(chs(\"./displacementMap\"))!=0,1,0)" }
+            help    "None (object:displacebound)"
+            range   { 0 10 }
+            parmtag { "mantra_class" "object" }
+            parmtag { "mantra_name" "displacebound" }
+            parmtag { "spare_category" "Shading" }
+        }
+        parm {
+            name    "vm_displacespace"
+            label   "Displacement Space"
+            type    string
+            default { "object" }
+            help    "The space in which you specify displacement bounds. (object:displacespace)"
+            menu {
+                "camera"    "Bounds specified in world space"
+                "object"    "Bounds specified in object space"
+            }
+            parmtag { "mantra_class" "object" }
+            parmtag { "mantra_name" "displacespace" }
+            parmtag { "spare_category" "Shading" }
+        }
+        parm {
+            name    "vm_truedisplace"
+            label   "True Displacements"
+            type    toggle
+            default { [ "if(strlen(chs(\"./displacementMap\"))!=0,1,0)" hscript-expr ] }
+            help    "When running displacement shaders, whether the VEX variable P is actually moved (true displacement) or whether bump mapping will be performed. (object:truedisplace)"
+            parmtag { "mantra_class" "object" }
+            parmtag { "mantra_name" "truedisplace" }
+            parmtag { "spare_category" "Shading" }
+        }
+        parm {
+            name    "vm_bumpraydisplace"
+            label   "Add Bump To Ray Traced Displacements"
+            type    toggle
+            default { "1" }
+            help    "When true displacements is enabled, use the displacement as a bump map in addition to displacing the geometry.  Enabling this option can increase apparent detail without incurring the cost of an increase in shading quality.  Essentially, mantra is using true displacements up to the shading quality, and then adding the remaining detail by modifying the shading normal N. (object:bumpraydisplace)"
+            disablewhen "{ vm_truedisplace == 0 }"
+            parmtag { "mantra_class" "object" }
+            parmtag { "mantra_name" "bumpraydisplace" }
+            parmtag { "spare_category" "Shading" }
+        }
+        parm {
+            name    "vm_sharedisplace"
+            label   "Share Displacements Between Instances"
+            type    toggle
+            default { "1" }
+            help    "By default, when instancing is used with displacements, the displaced\n    geometry will be created uniquely for each instance, since it's\n    possible that the displacements may differ based on the world-space\n    position of each instance.  This default behavior will guarantee\n    correct results but it can be inefficient since mantra needs to keep a\n    separate copy of the displaced geometry for each instance. When this\n    setting is enabled, mantra will share a single copy of the displaced\n    geometry between all instances, and assumes that the displacement\n    shader only uses the object space position to determine the displaced\n    position and normal. (object:sharedisplace)"
+            parmtag { "mantra_class" "object" }
+            parmtag { "mantra_name" "sharedisplace" }
+            parmtag { "spare_category" "Shading" }
+        }
+    }
+
+    parm {
+        name    "uv"
+        label   "uv"
+        type    float
+        invisible
+        size    3
+        default { "0" "0" "0" }
+        range   { 0 10 }
+        parmtag { "parmvop" "1" }
+        parmtag { "shaderparmcontexts" "surface displace" }
+    }
+}
