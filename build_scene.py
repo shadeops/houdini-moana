@@ -627,7 +627,10 @@ def convert_tex(tex_path):
     if not os.path.exists(os.path.dirname(rat_path)):
         os.makedirs(os.path.dirname(rat_path))
     logging.info('Converting %s to a rat texture', clean_tex_path)
-    proc = subprocess.Popen(['iconvert', clean_tex_path, rat_path])
+    iconvert_path = os.path.expandvars('$HFS/bin/iconvert')
+    if not os.path.exists(iconvert_path):
+        raise OSError('Could find $HFS/bin/iconvert')
+    proc = subprocess.Popen([iconvert_path, clean_tex_path, rat_path])
     stdout,stderr = proc.communicate()
     if proc.returncode != 0:
         logging.error(stderr)
