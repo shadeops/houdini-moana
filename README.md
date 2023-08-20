@@ -1,5 +1,9 @@
+# ⚠️ This project is Archived.
+
+This was meant to be brute force way of converting to Disney Moana dataset into Houdini bgeo format for investigations. However this approach is no longer needed and you should instead use the USD version provided as this imports much more efficiently into Houdini's Solaris.
+
 # houdini-moana
-Python script for converting the [Moana Data-set](https://www.technology.disneyanimation.com/islandscene) to Houdini
+Python script for converting the [Moana Data-set](https://www.disneyanimation.com/data-sets/?drawer=/resources/moana-island-scene/) to Houdini
 
 The script will convert all the data-set into a Houdini Mantra renderable scene. The output is a bunch of bgeo files representing cleaned up versions of the objs as well as a hip file containing the geometry, lights, cameras, and materials. None of the data-set is modify, only new files/directories are created.
 
